@@ -1,0 +1,26 @@
+<nav class="nav">
+  <div class="nav-header">
+    <a class="nav-link" href="{{ site.baseurl }}/">
+{%- assign banner_url = site.banner.url | default: '' | strip -%}
+{%- assign subtitle_text = site.subtitle | default: '' | strip -%}
+
+{%- if banner_url.size > 0 -%}
+      <div class="nav-banner" style="background-image: url('{{ banner_url }}');{% if site.banner.height > 0 %} height: {{ site.banner.height }}px;{% endif %}"></div>
+{%- else -%}
+      <h1 class="nav-title">{{ site.title }}</h1>
+{%- endif -%}
+{%- if subtitle_text.size > 0 -%}
+      <h2 class="nav-subtitle">{{ site.subtitle }}</h2>
+{%- endif -%}
+    </a>
+  </div>
+  <div class="nav-navigation">
+    <ul>
+{%- for page in site.pages | sort:"name" -%}
+   {%- if page.include_in_navigation -%}
+      <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a>
+   {%- endif -%}
+{%- endfor -%}
+    </ul>
+  </div>
+</nav>

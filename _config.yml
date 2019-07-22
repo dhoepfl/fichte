@@ -1,0 +1,53 @@
+# Site settings
+title:          Fichte
+subtitle:       "A tree is better than concret."
+banner:
+  # URL of the banner image (or empty to use text title)
+  url:          ''
+  # Height of the banner when using a banner image
+  height:       70
+
+translations:
+  written_by_prefix:   "Von"
+  written_by_postfix:  ""
+  written_on_prefix:   "am&nbsp;"
+  written_on_postfix:  ""
+  date_format:         "%d. %B %Y"
+
+
+description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/fichte"
+url:            "https://dhoepfl.github.io"
+
+# Google Analytics
+#google_analytics: UA—XXXXXXXX-X
+
+# Author
+author:
+  name:         Daniel Höpfl
+  url:          https://hoepfl.de
+  email:        daniel@hoepfl.de
+
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
+
+# Gems
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year/:month/:day/:title
+
+# Should be dividible by 3
+paginate:       9
+paginate_path:  /page/:num

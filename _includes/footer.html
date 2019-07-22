@@ -1,0 +1,15 @@
+{%- assign sy = site.time | date: '%Y' -%}
+{%- if page.date -%}
+  {%- assign py = page.date | date: '%Y' -%}
+{%- else -%}
+  {%- assign py = sy -%}
+{%- endif -%}
+<footer>
+  <span>
+     &copy;&nbsp;
+{%- if py != sy -%}
+     <time datetime="{{ page.date }}">{{ py }}</time>&ndash;
+{%- endif -%}
+     <time datetime="{{ sy }}">{{ sy }}</time> {{ site.author.name }}.
+  </span>
+</footer>

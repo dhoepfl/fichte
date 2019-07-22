@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="catalogue mdl-grid">
+  {% for post in paginator.posts %}
+      <a class="catalogue-item" href="{{ post.url | relative_url }}">
+        {%- assign date_format = site.translations.date_format | default: "%B %d, %Y" -%}
+        {%- assign default_image_number = forloop.index | modulo: 4 | plus: 1 -%}
+        {%- assign default_image = "/assets/dummy" | append: default_image_number | append: ".jpg" %}
+        <div class="catalogue-image" style="background-image: url({{ post.thumbnail | default: default_image | relative_url }}")>
+          <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: date_format }}</time>
+          <h1 class="catalogue-title">{{ post.title }}</h1>
+  
+          <p class="catalogue-excerpt">
+          {{ post.excerpt | strip_html }}
+          </p>
+        </div>
+      </a>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {%- if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="left arrow" title="Newer posts">&#8592;</a>
+  {%- endif %}
+  {%- if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="right arrow" title="Older posts">&#8594;</a>
+  {%- endif %}
+
+  <span>{{ paginator.page }}/{{ paginator.total_pages }}</span>
+</div>
+
+{% include keyboard_navigation.html %}

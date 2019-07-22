@@ -1,0 +1,49 @@
+{% if page.next.url or page.previous.url or paginator.previous_page or paginator.next_page %}
+<script>
+<!--
+
+window.onkeydown = function (e) {
+   {%- if page.next.url or page.previous.url %}
+
+   {%- if page.previous.url %}
+   if (e.key == 'j') {
+      window.location = "{{ page.previous.url | absolute_url }}"
+   }
+   if (e.key == '$') {
+      window.location = "{{ site.posts.last.url | absolute_url }}"
+   }
+   {%- endif %}
+   {%- if page.next.url %}
+   if (e.key == 'k') {
+      window.location = "{{ page.next.url | absolute_url }}"
+   }
+   if (e.key == '0') {
+      window.location = "{{ site.posts.first.url | absolute_url }}"
+   }
+   {%- endif %}
+
+   {%- elsif paginator %}
+
+   {%- if paginator.next_page %}
+   if (e.key == 'j') {
+      window.location = "{{ paginator.next_page_path | absolute_url }}"
+   }
+   if (e.key == '$') {
+      window.location = "{{ site.paginate_path | replace: ":num", paginator.total_pages | absolute_url }}"
+   }
+   {%- endif %}
+   {%- if paginator.previous_page %}
+   if (e.key == 'k') {
+      window.location = "{{ paginator.previous_page_path | absolute_url }}"
+   }
+   if (e.key == '0') {
+      window.location = "{{ site.url | append: site.baseurl }}"
+   }
+   {%- endif %}
+
+   {%- endif %}
+}
+
+// -->
+</script>
+{% endif %}

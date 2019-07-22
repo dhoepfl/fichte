@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="post">
+  <div class="post-info">
+     <span>{{ site.translations.written_by_prefix | default: "Written by" }}</span>
+    {%- if page.author %}
+        {{ page.author }}
+    {%- else %}
+        {{ site.author.name }}
+    {%- endif %}
+     <span>{{ site.translations.written_by_postfix }}</span>
+
+    {%- if page.date %}
+      {%- assign date_format = site.translations.date_format | default: "%B %d, %Y" -%}
+      <br>
+      <span>{{ site.translations.written_on_prefix | default: "on&nbsp;" }}</span><time datetime="{{ page.date }}">{{ page.date | date: date_format }}</time><span>{{ site.translations.written_on_postfix}}</span>
+    {%- endif %}
+  </div>
+
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-line"></div>
+
+  {{ content }}
+
+</div>
+
+<div class="pagination">
+  {%- if page.next.url %}
+    <a href="{{ page.next.url | relative_url }}" class="left arrow" title="Newer Post">&#8592;</a>
+  {%- endif %}
+  {%- if page.previous.url %}
+    <a href="{{ page.previous.url | relative_url }}" class="right arrow" title="Older Post">&#8594;</a>
+  {%- endif %}
+
+  <a href="#" class="top">Top</a>
+</div>
+
+{% include keyboard_navigation.html %}

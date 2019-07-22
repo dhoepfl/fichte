@@ -1,0 +1,19 @@
+@media print {
+  .nav,
+  .pagination {
+    display: none;
+  }
+
+  .post {
+     padding: 0px;
+  }
+
+  main,
+  footer {
+    padding: 0px;
+  }
+
+  body {
+     background-image: none !important;
+  }
+}

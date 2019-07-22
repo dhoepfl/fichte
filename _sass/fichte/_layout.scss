@@ -1,0 +1,105 @@
+main,
+footer,
+.nav-header {
+  display: block;
+  margin: 0 auto;
+  max-width: calc(4rem + 3 * 300px + 40px);
+  width: 90%;
+  padding: 2rem;
+}
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+footer,
+main {
+   background-color: rgba(255,255,255,0.9);
+}
+
+.nav {
+  box-shadow: 0 2px 2px -2px $shadow-color;
+  overflow: auto;
+  background-color: $default-tint;
+  text-align: center;
+
+  &-header {
+    margin: 1rem auto 0 auto;
+    position: relative;
+  }
+
+  &-title {
+    color: $bright-tint;
+    text-align: center;
+    font-size: 400%;
+    display: block;
+    margin: 0;
+    padding-right: .2rem;
+  }
+  &-subtitle {
+    color: $bright-tint;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  &-banner {
+    height:70px;
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  &-navigation {
+    background-color: $bright-tint;
+  }
+
+  ul {
+    width: 90%;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  li {
+    color: $default-color;
+    display: inline-block;
+    padding: 0 2rem 0 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    @include transition(color .2s ease-out);
+    color: $default-color;
+    font-family: $sans-serif;
+  }
+
+  a:hover,
+  a:focus {
+    @include transition(color .2s ease-out);
+    color: $link-color;
+  }
+}
+
+@media (min-width: 600px) {
+  .nav {
+    &-header {
+      text-align: left;
+    }
+  }
+}
+
+footer {
+  font-family: $serif-secondary;
+  padding: 2rem 0;
+  text-align: center;
+
+  span {
+    color: $default-color;
+    font-size: .8rem;
+  }
+}

@@ -1,0 +1,38 @@
+// Colors
+$default-color: #555;
+$default-shade: #a5a5a5;
+
+$default-tint: #fd9709;
+// $bright-tint: #ffcf8c;
+// $dark-tint: #c27408;
+$bright-tint: lighten($default-tint, 30%);
+$dark-tint: darken($default-tint, 20%);
+
+$link-color: $dark-tint;
+
+$shadow-color: rgba(0, 0, 0, .2);
+$code-color: #bf616a;
+
+$grey-1: #979797;
+$grey-2: #e5e5e5;
+$grey-3: #f9f9f9;
+
+// Fonts
+$serif-primary: 'Libre Baskerville', 'Times New Roman', Times, serif;
+$serif-secondary: Palatino, 'Palatino LT STD', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+$sans-serif: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+$monospaced: Menlo, Monaco, monospace;
+
+@mixin box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+     -moz-box-sizing: $type;
+          box-sizing: $type;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+     -moz-transition: $args;
+          transition: $args;
+}
+
+$animation-speed: 0.3s;

@@ -1,0 +1,81 @@
+.catalogue {
+  font-family: $sans-serif;
+
+  vertical-align: top;
+  text-align: center;
+  padding-top: 2rem;
+
+  &-item {
+    position: relative;
+    text-align: left;
+    color: $default-color;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: 0em 5px 1em 5px;
+    border-radius: 1em;
+    background-color: $grey-2;
+  }
+
+  &-image {
+    position:relative;
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin: 0px;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  &-excerpt {
+    margin:0;
+    padding: 1em;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width:300px;
+    height:300px;
+    color: $default-color;
+    background-color: rgba(255, 255, 255, 0.7);
+
+    opacity: 0;
+    @include transition(opacity $animation-speed ease);
+  }
+  &-item:hover &-excerpt{
+    opacity: 1;
+    @include transition(opacity $animation-speed ease);
+  }
+  &-item:hover &-title,
+  &-item:hover &-time {
+    opacity: 0;
+    @include transition(opacity $animation-speed ease);
+  }
+
+  &-time {
+    position: absolute;
+    top:0px;
+    text-align: right;
+    margin: 0px;
+    width: 300px;
+    padding-right: 0.5em;
+
+    color: transparentize($grey-3, 0.3);
+    background-color: transparentize($default-tint, 0.2);
+  }
+
+  &-title {
+    position: absolute;
+    bottom: 0px;
+    width: 300px;
+
+    padding: 0.5rem 1rem;
+    text-align: left;
+    margin: 0px;
+    overflow: hidden;
+
+    color: transparentize($grey-3, 0.3);
+    background-color: transparentize($default-tint, 0.2);
+  }
+}
