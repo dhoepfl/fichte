@@ -1,5 +1,4 @@
 main,
-footer,
 .nav-header {
   display: block;
   margin: 0 auto;
@@ -8,13 +7,18 @@ footer,
   padding: 2rem;
 }
 body {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-footer,
 main {
-   background-color: rgba(255,255,255,0.9);
+  flex: 1;
+
+  background-color: rgba(255,255,255,0.9);
 }
 
 .nav {
@@ -95,11 +99,14 @@ main {
 
 footer {
   font-family: $serif-secondary;
-  padding: 2rem 0;
+  background-color: $bright-tint;
+  padding: 1rem 0;
+  border-top: 1px solid $default-tint;
   text-align: center;
+  font-size: .8rem;
 
   span {
     color: $default-color;
-    font-size: .8rem;
+    opacity: .6;
   }
 }
