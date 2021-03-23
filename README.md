@@ -2,7 +2,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/dhoepfl%2Ffichte.svg)](https://badge.fury.io/gh/dhoepfl%2Ffichte)
 
-Fichte is a minimal Jekyll theme. Checkout the demo [here](https://dhoepfl.github.io/fichte/).
+Fichte is a minimal Jekyll 3.x/4.x theme. Checkout the demo [here](https://dhoepfl.github.io/fichte/).
 
 ## Features
 - Easy installation
