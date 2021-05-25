@@ -15,7 +15,7 @@ Fichte is a minimal [Jekyll](https://jekyllrb.com/) theme, based on [Tale](https
    - Markdown and HTML text formatting
    - Pagination of posts
 
-   Head over to the [Example Content]({{ site.baseurl }}{% post_url 2019-07-16-Example-Content %}) post for a showcase of Fichte's text formatting features.
+   Head over to the [Example Content]({% post_url 2019-07-16-Example-Content %}) post for a showcase of Fichte's text formatting features.
 
 ## Browser Support
 
